@@ -619,6 +619,7 @@ class DataLoader(object):
             while line != "" and line != None:
                 arr = line.strip().split(',')
                 user, item = int(arr[0]), int(arr[1])
+                rating = int(arr[2])
                 test_user_list.append(user)
                 if rating >=4:
                     if user not in test_user_ground_truth:
