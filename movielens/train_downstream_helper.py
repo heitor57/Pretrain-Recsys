@@ -619,14 +619,14 @@ class DataLoader(object):
             while line != "" and line != None:
                 arr = line.strip().split(',')
                 user, item = int(arr[0]), int(arr[1])
-                rating = int(arr[1])
-                if rating >=4:
-                    test_user_list.append(user)
-                    if user not in test_user_ground_truth:
-                        test_user_ground_truth[user] = []
-                        test_user_ground_truth[user].append(item)
-                    else:
-                        test_user_ground_truth[user].append(item)
+                # rating = int(arr[1])
+                # if rating >=4:
+                test_user_list.append(user)
+                if user not in test_user_ground_truth:
+                    test_user_ground_truth[user] = []
+                    test_user_ground_truth[user].append(item)
+                else:
+                    test_user_ground_truth[user].append(item)
 
                 line = f.readline()
         test_user_set = set(test_user_list)
